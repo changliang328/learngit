@@ -24,6 +24,30 @@
 
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
 
+12.git pull 取回origin主机的next分支，与本地的master分支合并，需要写成下面这样。  git pull origin next:master
+13.git branch
+	git branch可以用来列出分支,创建分支和删除分支.
+	git branch -v可以看见每一个分支的最后一次提交.
+	git branch: 列出本地所有分支,当前分支会被星号标示出.
+	git branch (branchname): 创建一个新的分支(当你用这种方式创建分支的时候,分支是基于你的上一次提交建立的). 
+							 git branch -d (branchname)
+14. git clone git@120.25.125.199:BTL.git   表示从服务器克隆到本地BTL,不需要git init初始化，和关联远程仓库
 
 
-123
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
