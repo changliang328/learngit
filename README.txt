@@ -13,9 +13,12 @@
 创建+切换分支：git checkout -b <name>
 合并某分支到当前分支：git merge <name>
 删除分支：git branch -d <name>
-11.要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+11.关联一个远程库，       使用命令git remote add origin git@server-name:path/repo-name.git；
+        注意：×××××××repo-name必须是自己远程仓库存在的文件名，path是用户名，server-name服务器端的用户名
+   eg:git remote add origin git@github.com:changliang328/changliang.git
 
-关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+   关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+      git pull origin master   同步远程库到本地
 
 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
 12.   场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
@@ -32,6 +35,11 @@
 	git branch (branchname): 创建一个新的分支(当你用这种方式创建分支的时候,分支是基于你的上一次提交建立的). 
 							 git branch -d (branchname)
 14. git clone git@120.25.125.199:BTL.git   表示从服务器克隆到本地BTL,不需要git init初始化，和关联远程仓库
+15. 生成ssh key指令
+				   git config --global user.name "changliang"
+	               git config --global user.email "changliang328@163.com"
+				  ssh-keygen -t rsa -C "changliang328@163.com"
+
 
 
 
