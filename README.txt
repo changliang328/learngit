@@ -39,8 +39,11 @@
 				   git config --global user.name "changliang"
 	               git config --global user.email "changliang328@163.com"
 				  ssh-keygen -t rsa -C "changliang328@163.com"
-
-
+16. 基本操作：
+	git status查看状态
+	git add命令实际上就是把要提交的所有修改放到暂存区（Stage），
+	git commit -m "xiugai"就可以一次性把暂存区的所有修改提交到分支。
+	git push 
 
 
 
