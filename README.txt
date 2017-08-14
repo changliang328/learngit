@@ -43,8 +43,22 @@
 	git status查看状态
 	git add命令实际上就是把要提交的所有修改放到暂存区（Stage），
 	git commit -m "xiugai"就可以一次性把暂存区的所有修改提交到分支。
-	git push 
+	git push
+17.使远程库覆盖本地库，本地与远程库保持同步更新
+   git fetch --all  
+   git reset --hard origin/master 
+   git pull
+18.git pull 时冲突解决办法：
 
+	1.$ git stash	(暂存修改)先将本地修改存储起来,这样本地的所有修改就都被暂时存储起来 。是用git stash list可以看到保存的信息：
+					其中stash@{0}就是刚才保存的标记。
+	2、pull内容  	暂存了本地修改之后，就可以pull了。 	$ git pull
+	3、还原暂存的内容  	$ git stash pop stash@{0}
+		系统提示如下类似的信息：
+		Auto-merging c/environ.c CONFLICT (content): Merge conflict in c/environ.c
+		意思就是系统自动合并修改的内容，但是其中有冲突，需要解决其中的冲突。
+	4、解决文件中冲突的的部分
+		打开冲突的文件，手动修改
 
 
 
