@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tv_color_red">#f44242</color>
+    <color name="tv_color_gray">#DBDBDB</color>
+    <color name="tv_color_green">#2e8b57</color>
+    <color name="tv_color_black">#000000</color>
+    
+</resources>

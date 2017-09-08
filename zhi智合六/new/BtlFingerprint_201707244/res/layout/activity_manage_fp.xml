@@ -1,0 +1,406 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/corner_1"
+        android:orientation="vertical"
+        android:padding="6dp" >
+	<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:onClick="gotoManageM"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/i_manage"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/id_manage_fingerprint_manage_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:onClick="gotoManageM"
+                android:text="@string/fingerprint_manage"
+                android:textColor="@color/tv_color_black"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:onClick="gotoManageM"
+                android:src="@drawable/arrow_right" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginLeft="9dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" 
+            android:onClick="gotoManageM">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:text="@string/fingerprint_manage_note"
+                android:textColor="#717171"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#DBDBDB" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" 
+            android:focusable="true"
+            android:clickable="true"
+            android:onClick="gotoManageMussic">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/i_music"
+                android:gravity="center_vertical" 
+                android:clickable="false"/>
+
+            <TextView
+                android:id="@+id/manage_musiccontrol_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="@string/fingerprint_music_cntrol"
+                android:textColor="@color/tv_color_black"
+                android:textSize="16dp"
+                android:clickable="false"/>
+
+            <ToggleButton
+                android:id="@+id/music_cntrol_tb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:button="@drawable/toggle_btn"
+                android:checked="false"
+                android:textOff=""
+                android:textOn="" 
+            	android:clickable="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginLeft="9dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:onClick="gotoManageMussic"
+            android:focusable="true"
+            android:clickable="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:text="@string/fingerprint_music_note"
+                android:textColor="#717171"
+                android:textSize="10dp" 
+                 android:clickable="false"/>
+        </LinearLayout>
+		
+		
+		<View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#DBDBDB" />
+        
+		<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:onClick="gotoManageCamera"
+            android:focusable="true"
+            android:clickable="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/i_camera"
+                android:gravity="center_vertical"
+                android:clickable="false" />
+
+            <TextView
+                android:id="@+id/manage_photocontrol_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="@string/fingerprint_photo_control"
+                android:textColor="@color/tv_color_black"
+                android:textSize="16dp" 
+                android:clickable="false"/>
+
+            <ToggleButton
+                android:id="@+id/photo_control_tb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:button="@drawable/toggle_btn"
+                android:checked="false"
+                android:textOff=""
+                android:textOn="" 
+                android:clickable="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginLeft="9dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" 
+            android:onClick="gotoManageCamera"
+            android:focusable="true"
+            android:clickable="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:text="@string/fingerprint_photograph_note"
+                android:textColor="#717171"
+                android:textSize="10dp" 
+                android:clickable="false"/>
+        </LinearLayout>
+
+     
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#DBDBDB" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" 
+            android:onClick="gotoManagePhone"
+            android:focusable="true"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/i_phone"
+                android:gravity="center_vertical"
+                android:clickable="false" />
+
+            <TextView
+                android:id="@+id/manage_answercontrol_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="@string/fingerprint_answer_control"
+                android:textColor="@color/tv_color_black"
+                android:textSize="16dp" 
+                android:clickable="false"/>
+
+            <ToggleButton
+                android:id="@+id/answer_control_tb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:button="@drawable/toggle_btn"
+                android:checked="false"
+                android:textOff=""
+                android:textOn="" 
+                android:clickable="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginLeft="9dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:onClick="gotoManagePhone"
+            android:focusable="true"
+            android:clickable="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:text="@string/fingerprint_answer_note"
+                android:textColor="#717171"
+                android:textSize="10dp"
+                android:clickable="false" />
+        </LinearLayout>
+
+        
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#DBDBDB" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:onClick="gotoSetPwd"
+            android:orientation="horizontal" 
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/i_key"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/id_manage_pwd_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="gotoSetPwd"
+                android:padding="10dp"
+                android:text="@string/fingerprint_change_pwd"
+                android:textColor="@color/tv_color_black"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/arrow_right" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginLeft="9dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:onClick="gotoSetPwd" 
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:text="@string/fingerprint_password_note"
+                android:textColor="#717171"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#DBDBDB" 
+            android:visibility="gone"/>
+
+        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:onClick="gotoManageV"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/i_version"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/id_manage_version_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="gotoManageV"
+                android:padding="10dp"
+                android:text="@string/fingerprint_version"
+                android:textColor="@color/tv_color_black"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/arrow_right" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginLeft="9dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" 
+            android:onClick="gotoManageV">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:text="@string/fingerprint_version_note"
+                android:textColor="#717171"
+                android:textSize="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
