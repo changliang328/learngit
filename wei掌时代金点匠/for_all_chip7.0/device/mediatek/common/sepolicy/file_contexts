@@ -1,0 +1,2 @@
+/dev/bl229x(/.*)? u:object_r:bl229x_device:s0
+/sys/class/leds/lcd-backlight/brightness(/.*)? u:object_r:sysfs:s0

@@ -1,0 +1,76 @@
+﻿移植包目录说明：
+device      selinux、设备权限相关内容
+kernel       驱动、dtsi
+vendor	    指纹库与应用apk
+frameworks     应用功能framework层相关
+packages       应用apk相关
+Factory Test	工厂测试
+##############################################################
+android7.0加上device.mk
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
+
+移植流程：
+
+1. 移植驱动：
+   a. 加入DTS相关文件
+      将kernel-3.18/arch/arm64/boot/dts/bl229x_mt6735.dtsi拷贝到平台对应目录,修改spi管脚、reset、power、int相关gpio配置
+
+   b. 把DTS文件包含（#include "bl229x_mt6735.dtsi"）到系统的DTS文件中
+      （参考kernel-3.18/arch/arm64/boot/dts/k06td_a.dts文件）
+
+	####################注意！！！##################################
+	1.如果硬件给指纹AVDD供电为PMU常供，需要屏蔽掉驱动中power脚相关内容。
+
+	2.MTK部分平台代码，平台SPI解析DTS存在BUG，需要在平台spi.c（/kernel-3.18/drivers/spi/mediatek/mtXXXX/spi.c）
+	的probe函数填充master结构体添加以下代码：
+	master->dev.of_node = pdev->dev.of_node;
+	 如果未添加会导致dtsi已经添加但是仍未注册到spi设备。
+	 
+	##############################################################
+
+   c. 将移植包里kernel/drivers/目录下文件拷贝到平台相应的位置 （kernel/drivers/input/fingerprint）
+   d. 修改Makefile,  kconfig ,  kernel config文件配置将驱动编译进内核
+   #############################注意！！！！###########################
+   如果已经调试过其他厂家驱动，请先屏蔽其他厂家指纹相关内容
+   ###################################################################
+   e.重新烧录新内核后，查看是否出现/sys/bl229x_sysfs调试节点，如果出现说明驱动添加ok
+   f.连接模组，cat /sys/bl229x_sysfs/selftest，如果结果为0设备通信、中断OK；结果-2表明spi通信异常（检查平台spi配置、硬件连接、供电等）；结果为-3，中断异常（检查中断相关配置）
+
+
+
+2. 修改seAndroid 文件
+   把目录 device/mediatek/common/sepolicy下的te文件中bl229x（我们需要添加的关键字，搜索“bl229x”相关行添加）相关内容整合到客户对应文件里
+  
+3. 修改系统文件
+   a. 参考/device/mediatek/mt6735/init.mt6735.rc修改客户对应.rc 文件，在开机时启动fingerprintd 服务，增加设备节点权限
+	chmod 0666 /dev/bl229x
+	service fingerprintd /system/bin/fingerprintd
+    	class late_start
+    	user root
+   b. 参考/device/mediatek/mt6735/device.mk  添加PRODUCT_PACKAGES +=libBtlAlgo
+						PRODUCT_PACKAGES +=libBtlFpHal
+						PRODUCT_PACKAGES +=fingerprint.default
+						PRODUCT_PACKAGES += libxuFPAlg
+						PRODUCT_PACKAGES += BtlFingerprint                    //如果无需贝特莱应用功能，该行不需要添加
+						PRODUCT_PACKAGES += libbtlfp			      //如果无需贝特莱应用功能，该行不需要添加
+	修改平台对应device.mk文件。
+
+
+注意：如果只需要Android M默认解锁功能，frameworks、Settings部分无需移植。
+
+4. 库文件与应用功能合入：
+   a. vendor/3rd_fp/fp_bl229x下内容添加到平台目录，该目录下的BtlFingerprint.apk为贝特莱自定义指纹应用（应用锁）, 移植BtlFingerprint.apk到客户对应目录；
+libs目录为指纹需要用到的库。
+   b. 快捷键，应用锁的集成还包含frameworksActivity.java, Settings.java，PhoneWindowManager.java， SystemServer.java的修改,具体修改部分参考移植包frameworks目录。（可搜索关键字blestech,有该关键字注释的内容为需要添加内容）
+　　　c.packages/apps/Settings为应用apk添加入口。
+
+
+5. 工厂测试APK
+   FingerPrintTest下为工厂测试应用。
+
+
+
+       
+   
+
+
