@@ -1,0 +1,7 @@
+ndk-build NDK_PROJECT_PATH=./  NDK_APPLICATION_MK=./Application.mk APP_BUILD_SCRIPT=./Android.mk NDK_LIBS_OUT=../libs
+
+//生成移植包
+./pack_libs.sh libs
+
+//推库到手机
+./push_libs.sh
