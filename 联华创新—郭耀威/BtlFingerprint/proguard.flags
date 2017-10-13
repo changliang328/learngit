@@ -1,0 +1,10 @@
+-keep class com.cdfinger.aidlservice.*
+-keep class com.cdfinger.fingerprint.*
+-keep class com.cdfinger.fingerprint.utils.*
+-keep class com.cdfinger.fingerprintunlock.*
+-keep class com.cdfinger.fingerprintunlock.applock.*
+-keep class com.cdfinger.fingerprintunlock.support.*
+-keep class com.cdfinger.fingerprintunlock.ui.custom.*
+-keep class com.cdfinger.service.aidl.*
+-keep class com.cdfinger.fingerprintunlock.ui.support.LockUI
+-keep class com.cdfinger.fingerprintunlock.receiver.AppLockReceiver

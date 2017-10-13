@@ -1,0 +1,71 @@
+<resources>
+
+    <style name="show_note_activity" parent="android:style/Theme.Holo.Light">
+
+        <item name="android:actionBarStyle">@style/show_note_actionbar</item>
+    </style>
+
+    <style name="show_note_actionbar" parent="android:style/Widget.Holo.Light.ActionButton">
+        
+    </style>
+
+    <style name="add_fp_activity" parent="android:style/Theme.Holo.Light">
+
+        <item name="android:actionBarStyle">@style/add_fp_actionbar</item>
+    </style>
+
+    <style name="add_fp_actionbar" parent="android:style/Widget.Holo.Light.ActionButton">
+        <item name="android:displayOptions">showHome</item>
+    </style>
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="show_note_activity">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="DetailTheme" parent="android:Theme.Material.Settings"></style>
+
+    <style name="DetailActionbar" parent="android:style/Widget.Holo.Light.ActionButton">
+        <item name="android:displayOptions">showHome|showTitle</item>
+    </style>
+
+    <style name="PassTheme" parent="android:Theme.Holo.Light">
+    </style>
+
+    <style name="LockUITheme" parent="android:Theme.Holo.Light">
+        <item name="android:windowAnimationStyle">@style/MyAnimationWindowStyle</item>  
+        <item name="android:windowBackground">@android:color/transparent</item>  
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    
+    <style name="MyAnimationStyle">  
+        <item name="android:activityOpenEnterAnimation">@anim/activity_in</item>  
+        <item name="android:activityOpenExitAnimation">@anim/activity_out</item>  
+        <item name="android:activityCloseEnterAnimation">@anim/activity_in</item>  
+        <item name="android:activityCloseExitAnimation">@anim/activity_out</item>  
+    </style>
+    
+    <style name="MyAnimationWindowStyle" parent="@android:style/Animation.Translucent">  
+        <item name="android:windowEnterAnimation">@anim/activity_in</item>  
+        <item name="android:windowExitAnimation">@anim/activity_out</item>  
+    </style> 
+
+    <declare-styleable name="ProcessIndication">
+        <attr name="process_index" format="integer" />
+        <attr name="shader_start_color" format="color|reference" />
+        <attr name="shader_end_color" format="color|reference" />
+        <attr name="shader_width" format="dimension" />
+    </declare-styleable>
+
+</resources>
