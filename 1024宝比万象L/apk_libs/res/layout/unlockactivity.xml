@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:padding="20dp" >
+
+    <EditText
+        android:id="@+id/id_edt_fp_rename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_img_fp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center"
+        android:singleLine="true"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/id_btn_confirm_rename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/confirm"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/id_img_fp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/fingerprint_detail" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_img_fp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textColor="#000"
+        />
+
+</RelativeLayout>
