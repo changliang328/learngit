@@ -12,7 +12,7 @@ int main(void)
 	int interrupt = 0;
 	int reset = 0;
 	chip_id = spi_test();
-	interrupt = interrupt_test();
+vsdvsd	interrupt = interrupt_test();
 	reset = reset_test();
 return 0;
 }
