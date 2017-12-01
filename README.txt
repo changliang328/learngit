@@ -61,7 +61,10 @@
 		打开冲突的文件，手动修改
 19.对远程仓库分支建立追踪关系：
 	git branch --set-upstream-to=origin/（远程分支） （本地分支）
-
+20.git rebase 修复冲突，
+	如果从origin/master新建分支test，test和远程master都有多次提交时，push test分支之前先git rebase，rebase指令可以将提交暂时取消保存为补
+	丁，然后更新为origin/master的最新状态，最后在将test的commit提交与最新状态合并。合并中可能有冲突，解决冲突然后git add 不需要git commit，
+	然后执行git rebase --continue，test的commit提交就相当于在最新代码的基础上只做为一次commit合并
 
 
 
