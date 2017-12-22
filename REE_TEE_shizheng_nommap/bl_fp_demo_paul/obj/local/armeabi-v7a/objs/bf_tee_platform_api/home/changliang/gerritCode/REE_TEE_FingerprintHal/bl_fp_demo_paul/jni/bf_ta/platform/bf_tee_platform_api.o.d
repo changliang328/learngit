@@ -1,0 +1,32 @@
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/obj/local/armeabi-v7a/objs/bf_tee_platform_api//home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/bf_tee_platform_api.o: \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/bf_tee_platform_api.c \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_custom.h \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_log.h \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_types.h \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/./hardware/hw_auth_token.h \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_lib.h \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_config.h \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bl_chip.h \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/cJSON.h \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_tee_platform_api.h \
+  /home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_tee_plat_func.h
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_custom.h:
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_log.h:
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_types.h:
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/./hardware/hw_auth_token.h:
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_lib.h:
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_config.h:
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bl_chip.h:
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/cJSON.h:
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_tee_platform_api.h:
+
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/../../include/bf_tee_plat_func.h:

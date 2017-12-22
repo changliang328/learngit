@@ -1,0 +1,48 @@
+=== Build Guide with Trusty SDK ===
+
+1. Set GCC toolchain in PATH environment.
+Please use arm-eabi-4.8 in Android source code at prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
+
+2. Build instruction
+Go to the SDK TOP directory and run the following command to build module
+make M="[MOD-1] [MOD-2]:[TA] ..." 
+(The subparameter is used for compiling TA module)
+
+i.e.: the command to compile the TA sample code is
+make M="app/demo/tademo:TA"
+
+
+=== TA Module makefile ===
+The necessary statements:
+1. MODULE_DEPS(Add app/trusty ONLY!)
+MODULE_DEPS += \
+        app/trusty
+
+2. MODULE_DEPS_STATIC
+MODULE_DEPS_STATIC := \
+        libc \
+        libc-trusty \
+        libstdc++-trusty
+
+3. The common makefile for TA module
+include make/module-user_task.mk
+include make/module.mk
+
+4. Import external static library
+include make/module-user_task.mk
+MODULE_DEPS_STATIC += <STATIC LIBRARY PATH>
+include make/module.mk
+
+=== History ===
+1.1 - 2017/05/08
+- Initialize the SDK components and configurations for the TA and LK driver development
+
+1.2 - 2017/05/15
+- Add SPI and secure storage support
+- Change the header file reference order in TA
+
+1.3 - 2017/05/23
+- Full tos build will not be supported and only keep TA build methods
+- Enable ARM FVP support
+- Support the common fingerprint driver framework
+- Trusty library version print when TA is loaded

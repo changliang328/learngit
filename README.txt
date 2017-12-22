@@ -66,8 +66,24 @@
 	丁，然后更新为origin/master的最新状态，最后在将test的commit提交与最新状态合并。合并中可能有冲突，解决冲突然后git add 不需要git commit，
 	然后执行git rebase --continue，test的commit提交就相当于在最新代码的基础上只做为一次commit合并
 
-
-
+21.git add之后如果我们想看到暂存区和本地仓库之间的差异，就需要加一个参数git diff --cached：
+22.git删除未跟踪文件
+	# 删除 untracked files
+	git clean -f
+	# 连 untracked 的目录也一起删掉
+	git clean -fd
+	# 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）
+	git clean -xfd
+	# 在用上述 git clean 前，墙裂建议加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删
+	git clean -nxfd
+	git clean -nf
+	git clean -nfd
+23.提交时少提交了文件或者提交的信息写的不准确可以如下操作，操作会合并成一个提交
+	 git commit -m 'initial commit'
+	 git add forgotten_file
+	 git commit --amend
+24,撤销git add
+	git reset HEAD <file>
 
 
 

@@ -1,0 +1,48 @@
+一、CA编译:
+1.编译豆荚TEE ca:
+ndk-build -B TAC_NAME=beanpod  或者  ndk-build -B TAC_NAME=isee
+
+2.编译REE ca:
+ndk-build -B TAC_NAME=ree或ndk-build
+
+3.编译高通 ca
+ndk-build -B TAC_NAME=qsee 
+
+4.编译瓶钵 ca:
+ndk-build -B TAC_NAME=trustkernel
+
+5.编译ARM TEE  ca:
+ndk-build -B TAC_NAME=trustonic
+
+6.编译展讯TEE ca:
+ndk-build -B TAC_NAME=sprtrusty
+
+7.编译融卡TEE ca:
+ndk-build -B TAC_NAME=rsee
+
+-------------------------------------分割线---------------------------------------------- 
+
+二、TA编译:
+编译豆荚TEE (isee)ta:
+jni/bf_ta/platform/beanpod目录下make -B
+
+
+2.编译高通(qsee) ta:
+ 
+
+
+3.编译瓶钵(trustkernel) ta:
+ jni/bf_ta/platform/trustkernel目录下make -B
+
+
+4.编译ARM TEE(trustonic) ta:
+ 
+
+
+5.编译展讯TEE(sprtrusty) ta:
+
+
+6.编译融卡tee（rsee）ta:
+ 
+
+

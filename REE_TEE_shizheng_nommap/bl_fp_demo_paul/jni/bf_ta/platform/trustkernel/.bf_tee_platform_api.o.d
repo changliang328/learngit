@@ -1,0 +1,20 @@
+/home/changliang/gerritCode/REE_TEE_FingerprintHal/bl_fp_demo_paul/jni/bf_ta/platform/trustkernel/out/proj_ta/default/../../../bf_tee_platform_api.o: \
+ ../../../bf_tee_platform_api.c \
+ ../../../../chips/../../include/bf_custom.h \
+ ../../../../chips/../../include/bf_log.h \
+ ../../../../chips/../../include/bf_custom.h \
+ /home/changliang/TEE/tee_sdk/TEE/TK/TrustKernel_SDK-release/TrustKernel_SDK/ta_kit/include/trace.h \
+ /home/changliang/TEE/tee_sdk/TEE/TK/TrustKernel_toolchains/gcc-linaro-5.4.1-2017.05-x86_64_arm-linux-gnueabihf/lib/gcc/arm-linux-gnueabihf/5.4.1/include/stdbool.h \
+ /home/changliang/TEE/tee_sdk/TEE/TK/TrustKernel_toolchains/gcc-linaro-5.4.1-2017.05-x86_64_arm-linux-gnueabihf/lib/gcc/arm-linux-gnueabihf/5.4.1/include/stddef.h \
+ /home/changliang/TEE/tee_sdk/TEE/TK/TrustKernel_SDK-release/TrustKernel_SDK/ta_kit/include/compiler.h \
+ /home/changliang/TEE/tee_sdk/TEE/TK/TrustKernel_SDK-release/TrustKernel_SDK/ta_kit/include/trace_levels.h \
+ ../../../../chips/../../include/bf_tee_platform_api.h \
+ ../../../../chips/../../include/bf_types.h \
+ ../../../../chips/../../include/./hardware/hw_auth_token.h \
+ /home/changliang/TEE/tee_sdk/TEE/TK/TrustKernel_SDK-release/TrustKernel_SDK/ta_kit/include/stdint.h \
+ ../../../../chips/../../include/bf_lib.h \
+ ../../../../chips/../../include/bf_config.h \
+ ../../../../chips/../../include/bl_chip.h \
+ ../../../../chips/../../include/cJSON.h \
+ ../../../../chips/../../include/bf_tee_platform_api.h \
+ ../../../../chips/../../include/bf_tee_plat_func.h

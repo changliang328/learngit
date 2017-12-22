@@ -1,0 +1,57 @@
+=== Introduction ===
+This utility is a python script and it's provided to OEM vendors
+for packing TAs into trusted OS image. Please make sure it's used
+in Android development environment.
+ 
+=== Usage ===
+mktosimg [-h] --tos TOS [-l|-d] -u UUID --ta TA -o OUTPUT
+[TOS]     The orignal tos image
+[TA]      TA elf image(used in --ta without -l and without -d)
+[OUTPUT]  The new tos image with TA packed
+[UUID]    UUID of the TA to delete(used with -d action)
+
+Action:
+   -l     list all TAs in the TOS bin
+   -d     delete the TA (indicated by -u UUID) from the TOS, and save changed img to the OUTPUT
+
+
+Example:
+1, list all TAs in TOS:
+./mktosimg --tos tos.org.bin -l
+
+ output:
+~~~~~~~~~~~
+All TAs:
+====================================================================================================
+UUID                                                   Start            End                    Built
+----------------------------------------------------------------------------------------------------
+{5f902ace-5e5c-4cd8-ae-54-87-b8-8c-22-dd-af}         0xb7000       0x10b30b     13:17:34 Jul 21 2017
+{38ba0cdc-df0e-11e4-98-69-23-3f-b6-ae-47-95}        0x10b30c       0x118617     13:17:34 Jul 21 2017
+{cea8706d-6cb4-49f3-b9-94-29-e0-e4-78-bd-29}        0x118618       0x13b923     13:17:34 Jul 21 2017
+{10259fa6-d64d-11e6-91-8b-3b-2c-3a-be-2b-31}        0x13b924       0x142c2f     13:17:34 Jul 21 2017
+{df8ec70d-bb93-4b7b-ab-88-72-df-d3-f3-39-53}        0x142c30       0x149f3b     13:17:34 Jul 21 2017
+{48c32cae-974d-4597-88-d7-bc-fc-cd-b2-c8-03}        0x149f3c       0x150247     13:17:21 Jul 21 2017
+====================================================================================================
+
+2, add tademo.elf into tos:
+./mktosimg --tos tos.org.bin --ta build/user_tasks/app/demo/tademo/tademo.elf -o tos.bin 
+
+3, delete TA from Tos: 
+./mktosimg --tos tos.org.bin -d -u cea8706d-6cb4-49f3-b9-94-29-e0-e4-78-bd-29 -o tos.bin 
+
+  if list tos.bin, get output: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+All TAs:
+====================================================================================================
+UUID                                                   Start            End                    Built
+----------------------------------------------------------------------------------------------------
+{5f902ace-5e5c-4cd8-ae-54-87-b8-8c-22-dd-af}         0xb7000       0x10b30b     13:17:34 Jul 21 2017
+{38ba0cdc-df0e-11e4-98-69-23-3f-b6-ae-47-95}        0x10b30c       0x118617     13:17:34 Jul 21 2017
+{10259fa6-d64d-11e6-91-8b-3b-2c-3a-be-2b-31}        0x118618       0x11f923     13:17:34 Jul 21 2017
+{df8ec70d-bb93-4b7b-ab-88-72-df-d3-f3-39-53}        0x11f924       0x126c2f     13:17:34 Jul 21 2017
+{48c32cae-974d-4597-88-d7-bc-fc-cd-b2-c8-03}        0x126c30       0x12cf3b     13:17:21 Jul 21 2017
+====================================================================================================
+
+
+
+

@@ -1,0 +1,118 @@
+/************Blestech FINGERPRINT bengin *********/
+/ {
+betterlife_fp: bl_finger@ {
+		       compatible = "mediatek,betterlife-fp";
+	       };
+};
+
+&pio{
+fingerprint_default:state_default{
+			    pins_cmd_dat {
+				    pins = <PINMUX_GPIO66__FUNC_SPI_CKA>;
+				    input-enable;
+			    };
+			    pins_cmd2_dat {
+				    pins = <PINMUX_GPIO67__FUNC_SPI_MIA>;
+				    input-enable;
+			    };
+			    pins_cmd3_dat {
+				    pins = <PINMUX_GPIO68__FUNC_SPI_MOA>;
+				    input-enable;
+			    };
+			    pins_cmd4_dat {
+				    pins = <PINMUX_GPIO65__FUNC_SPI_CSA>;
+				    input-enable;
+			    };
+		    };
+		    
+fingerprint_reset_high:state_reset_high{
+			       pins_cmd_dat {
+				       pins = <PINMUX_GPIO4__FUNC_GPIO4>;
+				       slew-rate = <1>;
+				       output-high;
+			       };
+		       };       
+fingerprint_reset_low:state_reset_low{
+			      pins_cmd_dat {
+				      pins = <PINMUX_GPIO4__FUNC_GPIO4>;
+				      slew-rate = <1>;
+				      output-low;
+			      };
+		      };
+		      
+fingerprint_fp_interrupt:state_fp_interrupt{
+				 pins_cmd_dat {
+					 pins = <PINMUX_GPIO5__FUNC_GPIO5>;
+					 slew-rate = <0>;
+					 bias-pull-down = <00>;
+				 };
+			 };
+
+fingerprint_fp_power_high:state_power_high{
+				  pins_cmd_dat {
+					  pins = <PINMUX_GPIO63__FUNC_GPIO63>;
+					  slew-rate = <1>;
+					  output-high;
+				  };
+			  };
+fingerprint_fp_power_low:state_power_low{
+				 pins_cmd_dat {
+					 pins = <PINMUX_GPIO63__FUNC_GPIO63>;
+					 slew-rate = <1>;
+					 output-low;
+				 };
+			 };
+
+fingerprint_fp_power_1v8_high:state_power_1v8_high{
+				      pins_cmd_dat {
+						 pins = <PINMUX_GPIO63__FUNC_GPIO63>;
+					     slew-rate = <1>;
+					     output-high;
+				      };
+			      };
+fingerprint_fp_power_1v8_low:state_power_1v8_low{
+				     pins_cmd_dat {
+					     pins = <PINMUX_GPIO63__FUNC_GPIO63>;
+					     slew-rate = <1>;
+					     output-low;
+				     };
+			     };
+
+
+};
+
+&spi0{
+#address-cells = <1>;
+#size-cells = <0>;
+
+	blestech_fp@0{
+		compatible = "betterlife,betterlife-fp";		
+		reg = <0x1>;
+		spi-max-frequency = <0x10000000>;	
+		status = "okay";
+	};
+};
+
+&betterlife_fp {
+	pinctrl-names = "default", "reset_high", "reset_low","fp_interrupt","power_high","power_low","power_1v8_high","power_1v8_low";
+	pinctrl-0 = <&fingerprint_default>;
+	pinctrl-1 = <&fingerprint_reset_high>;
+	pinctrl-2 = <&fingerprint_reset_low>;
+	pinctrl-3 = <&fingerprint_fp_interrupt>;
+	pinctrl-4 = <&fingerprint_fp_power_high>;
+	pinctrl-5 = <&fingerprint_fp_power_low>;
+	pinctrl-6 = <&fingerprint_fp_power_1v8_high>;
+	pinctrl-7 = <&fingerprint_fp_power_1v8_low>;
+
+	reset-gpio = <&pio 4 0>;
+	power-gpio = <&pio 63 0>;
+	power-1v8-gpio = <&pio 232 0>;		
+	int_gpio = <&pio 5 0>;
+
+	interrupt-parent = <&eintc>;
+	interrupts = <5 IRQ_TYPE_LEVEL_HIGH>;
+	debounce = <5 0>;
+
+	status = "okay";	
+};
+/************Blestech FINGERPRINT end *********/

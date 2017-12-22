@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">nativefpcit</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="button_test">Test</string>
+    <string name="result">Test result</string>
+    
+    <string name="pass_test">Pass</string>
+    <string name="fail_test">Fail</string>
+    <string name="tip_press_ic">Please press the fingerprint chip</string>
+    
+    <string name="retest_tips">To initialize the timeout, click the "test" button to retest</string>
+
+    <string name="test_init">Initializing，please wait</string>
+    
+   <string name="action_version">V1.0.0</string>
+</resources>

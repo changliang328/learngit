@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">贝特莱指纹测试</string>
+    <string name="hello_world">你好</string>
+    <string name="action_settings">设置</string>
+    
+    <string name="button_test">点击测试</string>
+    <string name="result">测试结果</string>
+    
+    <string name="pass_test">通过</string>
+    <string name="fail_test">失败</string>
+    <string name="tip_press_ic">请手指按压指纹芯片</string>
+    
+    <string name="retest_tips">初始化超时，请按下"点击测试"按钮重新测试</string>
+    
+    <string name="test_init">初始化中，请稍等</string>
+
+    <string name="action_version">V1.0.0</string>
+</resources>
