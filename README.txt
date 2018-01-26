@@ -74,7 +74,7 @@
 	git clean -fd
 	# 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）
 	git clean -xfd
-	# 在用上述 git clean 前，墙裂建议加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删
+	# 在用上述 git clean 前，强烈建议加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删
 	git clean -nxfd
 	git clean -nf
 	git clean -nfd
@@ -84,16 +84,17 @@
 	 git commit --amend
 24,撤销git add
 	git reset HEAD <file>
+        git log 查看git库的提交
+25,gerrit推送代码
+   git push origin HEAD:refs/for/master
+   clone 后第一次push需要更新githooks
+	gitdir=$(git rev-parse --git-dir); scp -p -P 29418 changliang@192.168.0.200:hooks/commit-msg ${gitdir}/hooks/
+
+回退版本到一个新分支 ：	git checkout commitlog -b  分支名  
+patch:
+	
 
 
 
 
 
-
-
-
-
-
-
-
-git log 查看git库的提交
