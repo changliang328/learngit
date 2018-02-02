@@ -1,8 +1,0 @@
-release date: 2017-02-06
-version: 1.8.2
-PB Algorithm: R4H
-Modified list: 
-a.  Btl_EnhanceImage 增加enhance_type变量，0:不用增强，1:表示用pb 传统图像增强办法　2:当算法为neo_henry_algorithm时用PB 开发的betterlife图像增强办法
-b.  Btl_Enroll, Btl_MatchC等函数的enhance_type变量的意义如第一条
-c.  在算法封包里增加更多的调试信息
-                     
